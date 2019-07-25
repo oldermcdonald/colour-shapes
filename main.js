@@ -6,7 +6,7 @@
 const container = document.querySelector('.shape-container');
 
 function randomShape() {
-  let shapes = ['square', 'circle', 'triangle', 'oval', 'rectangle'];
+  let shapes = ['square', 'circle', 'triangle-up','triangle-down', 'oval', 'rectangle'];
   return randomElement(shapes);
 }
 
@@ -19,7 +19,27 @@ function randomElement(array)  {
   return array[Math.floor(Math.random()*array.length)];
 }
 
+
+function applyColour(shape) {
+  switch(shape.className) {
+    case "triangle-up":
+      shape.style.borderBottomColor = randomColour();
+      break;
+    case "triangle-down":
+      shape.style.borderTopColor = randomColour();
+      break;
+    default:
+      shape.style.backgroundColor = randomColour();
+  }
+
+}
+
+
 function addShape() {
-  let shape = document.createElement('div');
+  const shape = document.createElement('div');
+  shape.setAttribute("class", randomShape());
+
+  applyColour(shape)
+
   container.appendChild(shape);
 }
