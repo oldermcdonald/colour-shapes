@@ -1,25 +1,34 @@
 .shape-container {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
+  width: 100vw;
+  height: 100vw;
+  grid-template-columns: repeat(3, 30%);
+  grid-template-rows: repeat(3, 30%);
+  border:  1px solid black;
+  grid-gap: 2%
+}
+
+
+.shape-container > * {
+  align-self: center;
+  justify-self: center;
 }
 
 .square {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   background-color: #FF9787;
 }
 
 .rectangle {
-  width: 100px;
-  height: 50px;
-  align-self: center;
+  width: 100%;
+  height: 50%;
   background-color: #FF9787;
 }
 
 .circle {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background-color: #FF9787;
 }
@@ -41,9 +50,8 @@
 }
 
 .oval {
-  width: 100px;
-  height: 50px;
+  width: 100%;
+  height: 50%;
   border-radius: 100px / 50px;
-  align-self: center;
   background-color: #FF9787
 }
